@@ -22,13 +22,11 @@ export default function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app-container">
+      <div className='app-children'>
         {auth.currentUser && <SignOut />}
-      </header>
-      <section>
         {user ? <ChatRoom /> : <SignIn/> }
-      </section>
+      </div>
     </div>
   );
 
