@@ -1,7 +1,7 @@
 import React from 'react'
-import "./index.css"
+import "../index.css"
 
-import {firebaseConfig} from './config.js'
+import {firebaseConfig} from '../config.js'
 
 // firebase sdk
 import firebase from 'firebase/compat/app';
