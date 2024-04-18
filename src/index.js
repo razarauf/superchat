@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+
 import App from './App';
+import Posts from "./Posts"
+import NoPage from "./NoPage"
+
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes path="/">
+        <Route index element={<App/>}/>
+        <Route path="posts" element={<Posts/>}/>
+        <Route path="*" element={<NoPage/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
