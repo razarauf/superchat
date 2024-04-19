@@ -22,8 +22,8 @@ export default function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="app-container">
-      <div className='app-children'>
+    <div className="chat-container">
+      <div className='chat-items'>
         {auth.currentUser && <SignOut />}
         {user ? <ChatRoom /> : <SignIn/> }
       </div>
@@ -52,6 +52,9 @@ export default function App() {
     const sendMessage = async (e) => {
       e.preventDefault();
 
+      if (formValue === '')
+        return;
+
       const {uid, photoURL} = auth.currentUser;
 
       await messagesRef.add({
@@ -65,16 +68,16 @@ export default function App() {
 
     return (
       <>
-      <form onSubmit={sendMessage}>
-        <input onChange={e => setFormValue(e.target.value)} value={formValue} placeholder='say something'/>
-        <button type="submit">Send</button>
+      <form className='chat-input-container' onSubmit={sendMessage}>
+          <input className='chat-input' onChange={e => setFormValue(e.target.value)} value={formValue} placeholder='say something'/>
+          <button className='chat-button' type="submit">Send</button>
       </form>
       </>
     )
   }
   
   function ChatMessage(props){
-    return(<p>{props.message.text}</p>)
+    return(<p className='chat-message'>{props.message.text}</p>)
   }
   
   function SignIn(){
@@ -84,12 +87,12 @@ export default function App() {
     }
   
     return (
-      <button onClick={signInWithGoogle}>Sign In</button>
+      <button className='chat-button' onClick={signInWithGoogle}>Sign In</button>
     )
   }
   
   function SignOut(){
-    return (<button onClick={() => {auth.signOut()}}>Sign Out</button>)
+    return (<button className='chat-button' onClick={() => {auth.signOut()}}>Sign Out</button>)
   }
   
 }
