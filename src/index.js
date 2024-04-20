@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import App from './Components/App';
-import Posts from "./Posts"
-import NoPage from "./NoPage"
+import Posts from "./Components/Posts"
+import NoPage from "./Components/NoPage"
 
 import reportWebVitals from './reportWebVitals';
 
@@ -16,8 +16,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes path="/">
-        <Route index element={<App/>}/>
-        <Route path="posts" element={<Posts/>}/>
+        <Route path="superchat" element={<App/>}/>
+        <Route index element={<Posts/>}/>
         <Route path="*" element={<NoPage/>}/>
       </Routes>
     </BrowserRouter>

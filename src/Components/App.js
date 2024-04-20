@@ -1,5 +1,5 @@
 import React from 'react'
-import "../index.css"
+import "./App.css"
 
 import {firebaseConfig} from '../config.js'
 
@@ -11,6 +11,27 @@ import 'firebase/compat/firestore';
 //firebase hooks
 import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
+
+const messageConverter = {
+  toFirestore(message) {
+      return { 
+        createdAt: message.createdAt,
+        photoURL: message.photoURL,
+        text: message.text,
+        uid: message.uid
+      };
+  },
+  fromFirestore(snapshot, options) {
+      const data = snapshot.data(options);
+      return {
+        createdAt: data.createdAt,
+        photoURL: data.photoURL,
+        text: data.text,
+        uid: data.uid,
+        id: snapshot.id
+      };
+  }
+};
 
 firebase.initializeApp(firebaseConfig);
 
@@ -31,9 +52,9 @@ export default function App() {
   );
 
   function ChatRoom(){
-    const messagesRef = firestore.collection("messages");
+    const messagesRef = firestore.collection("messages").withConverter(messageConverter);
     const query = messagesRef.orderBy("createdAt").limit(25);
-    const [messages] = useCollectionData(query, {idField: 'id'})
+    const [messages] = useCollectionData(query)
 
     return (
       <>
