@@ -16,8 +16,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes path="/">
-        <Route path="superchat" element={<App/>}/>
-        <Route index element={<Posts/>}/>
+        <Route index element={<App/>}/>
+        <Route path="posts" element={<Posts/>}/>
         <Route path="*" element={<NoPage/>}/>
       </Routes>
     </BrowserRouter>
