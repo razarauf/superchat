@@ -12,6 +12,8 @@ import 'firebase/compat/firestore';
 import {useAuthState} from 'react-firebase-hooks/auth';
 import {useCollectionData} from 'react-firebase-hooks/firestore';
 
+import {Button} from 'reactstrap';
+
 const messageConverter = {
   toFirestore(message) {
       return { 
@@ -91,7 +93,7 @@ export default function App() {
       <>
       <form className='chat-input-container' onSubmit={sendMessage}>
           <input className='chat-input' onChange={e => setFormValue(e.target.value)} value={formValue} placeholder='say something'/>
-          <button className='chat-button' type="submit">Send</button>
+          <Button color='primary' type="submit">Send</Button>
       </form>
       </>
     )
@@ -108,12 +110,12 @@ export default function App() {
     }
   
     return (
-      <button className='chat-button' onClick={signInWithGoogle}>Sign In</button>
+      <button color='success' onClick={signInWithGoogle}>Sign In</button>
     )
   }
   
   function SignOut(){
-    return (<button className='chat-button' onClick={() => {auth.signOut()}}>Sign Out</button>)
+    return (<Button color='danger' onClick={() => {auth.signOut()}}>Sign Out</Button>)
   }
   
 }

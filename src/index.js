@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './Components/App';
 import Posts from "./Components/Posts"
+import Navbar from './Components/Navbar';
 import NoPage from "./Components/NoPage"
 
 import reportWebVitals from './reportWebVitals';
@@ -14,6 +16,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
+    <Navbar/>
     <BrowserRouter>
       <Routes path="/">
         <Route index element={<App/>}/>
