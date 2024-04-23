@@ -25,13 +25,13 @@ function Navibar(args) {
     return (
         <div>
         <Navbar {...args} className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container color='dark' dark={true}>
-            <NavbarBrand href="/">Home</NavbarBrand>
+            <NavbarBrand href="/">Superchat</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={isOpen} navbar>
             <Nav className="d-flex justify-content-end" navbar>
-                <NavItem>
+                {/* <NavItem>
                     <NavLink className="text-light" href="/posts">Posts</NavLink>
-                </NavItem>
+                </NavItem> */}
                 <NavItem>
                     <NavLink className="text-light" type='button' onClick={signInWithGoogle}>Sign In</NavLink>
                 </NavItem>

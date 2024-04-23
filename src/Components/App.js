@@ -45,10 +45,11 @@ export default function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="container">
+    <div className="chat-container">
       <div className='chat-items'>
         {/* {auth.currentUser && <SignOut />} */}
-        {user ? <ChatRoom /> : <SignIn/> }
+        {/* {user ? <ChatRoom /> : <SignIn/> } */}
+        {user ? <ChatRoom /> : <h4>Please Sign in above.</h4> }
       </div>
     </div>
   );
@@ -92,8 +93,8 @@ export default function App() {
     return (
       <>
       <form className='chat-input-container' onSubmit={sendMessage}>
-          <input className='chat-input' onChange={e => setFormValue(e.target.value)} value={formValue} placeholder='say something'/>
-          <Button color='primary' type="submit">Send</Button>
+          <input className='chat-input form-control-lg' onChange={e => setFormValue(e.target.value)} value={formValue} placeholder='say something'/>
+          <Button color='primary' size='large' type="submit">Send</Button>
       </form>
       </>
     )
@@ -103,16 +104,16 @@ export default function App() {
     return(<p className='chat-message'>{props.message.text}</p>)
   }
   
-  function SignIn(){
-    function signInWithGoogle(){
-      const provider = new firebase.auth.GoogleAuthProvider();
-      auth.signInWithPopup(provider).catch((error) => console.log(error));
-    }
+  // function SignIn(){
+  //   function signInWithGoogle(){
+  //     const provider = new firebase.auth.GoogleAuthProvider();
+  //     auth.signInWithPopup(provider).catch((error) => console.log(error));
+  //   }
   
-    return (
-      <Button color='success' onClick={signInWithGoogle}>Sign In</Button>
-    )
-  }
+  //   return (
+  //     <Button color='success' onClick={signInWithGoogle}>Sign In</Button>
+  //   )
+  // }
   
   // function SignOut(){
   //   return (<Button color='danger' onClick={() => {auth.signOut()}}>Sign Out</Button>)
