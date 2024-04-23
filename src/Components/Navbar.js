@@ -24,7 +24,7 @@ function Navibar(args) {
 
     return (
         <div>
-        <Navbar {...args} className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" container color='dark' dark={true}>
+        <Navbar {...args} className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container color='dark' dark={true}>
             <NavbarBrand href="/">Home</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={isOpen} navbar>
