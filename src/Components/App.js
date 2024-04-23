@@ -45,9 +45,9 @@ export default function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="chat-container">
+    <div className="container">
       <div className='chat-items'>
-        {auth.currentUser && <SignOut />}
+        {/* {auth.currentUser && <SignOut />} */}
         {user ? <ChatRoom /> : <SignIn/> }
       </div>
     </div>
@@ -110,12 +110,12 @@ export default function App() {
     }
   
     return (
-      <button color='success' onClick={signInWithGoogle}>Sign In</button>
+      <Button color='success' onClick={signInWithGoogle}>Sign In</Button>
     )
   }
   
-  function SignOut(){
-    return (<Button color='danger' onClick={() => {auth.signOut()}}>Sign Out</Button>)
-  }
+  // function SignOut(){
+  //   return (<Button color='danger' onClick={() => {auth.signOut()}}>Sign Out</Button>)
+  // }
   
 }

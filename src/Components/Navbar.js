@@ -24,19 +24,19 @@ function Navibar(args) {
 
     return (
         <div>
-        <Navbar {...args} className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container light>
+        <Navbar {...args} className="navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" container color='dark' dark={true}>
             <NavbarBrand href="/">Home</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={isOpen} navbar>
-            <Nav className="me-auto" navbar>
+            <Nav className="d-flex justify-content-end" navbar>
                 <NavItem>
-                    <NavLink className="text-dark" href="/posts">Posts</NavLink>
+                    <NavLink className="text-light" href="/posts">Posts</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="text-dark" onClick={signInWithGoogle}>Sign In</NavLink>
+                    <NavLink className="text-light" type='button' onClick={signInWithGoogle}>Sign In</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="text-dark" onClick={() => {auth.signOut()}}>Sign Out</NavLink>
+                    <NavLink className="text-light" type='button' onClick={() => {auth.signOut()}}>Sign Out</NavLink>
                 </NavItem>
             </Nav>
             </Collapse>
