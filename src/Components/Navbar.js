@@ -46,7 +46,7 @@ function Navibar(args) {
 
     function signInWithGoogle(){
         const provider = new firebase.auth.GoogleAuthProvider();
-        auth.signInWithPopup(provider);
+        auth.signInWithPopup(provider).catch((error) => console.log(error));
     }
 }
 
