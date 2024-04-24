@@ -75,6 +75,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Firebase commands
 
+### `npm install firebase`
+
 ### `sudo npm install -g firebase-tools`
 
 ### `firebase login`
