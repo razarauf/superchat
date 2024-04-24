@@ -81,5 +81,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `firebase deploy`
 
+### Reactstrap commands
+
+### `npm install reactstrap`
+
+### `npm install --save bootstrap`
+
 ### Hosted at: 
 [https://superchat-9aca7.web.app](https://superchat-9aca7.web.app)
