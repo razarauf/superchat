@@ -87,6 +87,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `firebase deploy`
 
+# Firebase hooks 
+
+### `npm install --save react-firebase-hooks`
+
+# Firestore
+
+### `npm install --save react-firestore`
+
 # Reactstrap commands
 
 ### `npm install reactstrap`
