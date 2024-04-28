@@ -16,11 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <Navbar/>
     <BrowserRouter>
+      <Navbar/>
       <Routes path="/">
         <Route index element={<App/>}/>
-        <Route path="aboutus" element={<AboutUs/>}/>
+        <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="*" element={<NoPage/>}/>
       </Routes>
     </BrowserRouter>
