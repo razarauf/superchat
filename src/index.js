@@ -4,7 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './Components/App';
-import Posts from "./Components/Posts"
+import AboutUs from "./Components/AboutUs"
 import Navbar from './Components/Navbar';
 import NoPage from "./Components/NoPage"
 
@@ -20,7 +20,7 @@ root.render(
     <BrowserRouter>
       <Routes path="/">
         <Route index element={<App/>}/>
-        <Route path="posts" element={<Posts/>}/>
+        <Route path="aboutus" element={<AboutUs/>}/>
         <Route path="*" element={<NoPage/>}/>
       </Routes>
     </BrowserRouter>

@@ -29,9 +29,9 @@ function Navibar(args) {
             <NavbarToggler onClick={toggle} />
             <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={isOpen} navbar>
             <Nav className="d-flex justify-content-end" navbar>
-                {/* <NavItem>
-                    <NavLink className="text-light" href="/posts">Posts</NavLink>
-                </NavItem> */}
+                <NavItem>
+                    <NavLink className="text-light" href="/aboutus">About Us</NavLink>
+                </NavItem>
                 <NavItem>
                     <NavLink className="text-light" type='button' onClick={signInWithGoogle}>Sign In</NavLink>
                 </NavItem>
