@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './Components/App';
 import AboutUs from "./Components/AboutUs"
-import Navbar from './Components/Navbar';
+import Navibar from './Components/Navibar';
 import NoPage from "./Components/NoPage"
 
 import reportWebVitals from './reportWebVitals';
@@ -17,7 +17,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Navbar/>
+      <Navibar/>
       <Routes path="/">
         <Route index element={<App/>}/>
         <Route path="/aboutus" element={<AboutUs/>}/>

@@ -101,5 +101,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `npm install --save bootstrap`
 
+# React Router
+
+### `npm install react-router-dom`
+
 ### Hosted at: 
 [https://superchat-9aca7.web.app](https://superchat-9aca7.web.app)

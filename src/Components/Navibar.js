@@ -23,7 +23,6 @@ function Navibar(args) {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
         <Navbar {...args} className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" container color='dark' dark={true}>
             <NavbarBrand href="/">Superchat</NavbarBrand>
             <NavbarToggler onClick={toggle} />
@@ -33,20 +32,26 @@ function Navibar(args) {
                     <NavLink className="text-light" href="/aboutus">About Us</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="text-light" type='button' onClick={signInWithGoogle}>Sign In</NavLink>
-                </NavItem>
+                    <NavLink className="text-light" type='button' onClick={signOut}>Sign Out</NavLink>
+                </NavItem> 
+                : 
                 <NavItem>
-                    <NavLink className="text-light" type='button' onClick={() => {auth.signOut()}}>Sign Out</NavLink>
+                    <NavLink className="text-light" type='button' onClick={signInWithGoogle}>Sign In</NavLink>
                 </NavItem>
             </Nav>
             </Collapse>
         </Navbar>
-        </div>
     );
+
+
 
     function signInWithGoogle(){
         const provider = new firebase.auth.GoogleAuthProvider();
         auth.signInWithPopup(provider).catch((error) => console.log(error));
+    }
+
+    function signOut(){
+        auth.signOut().catch((error) => console.log(error));
     }
 }
 
